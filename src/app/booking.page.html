@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Booking Practice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="ion-padding">
+    <h2>HttpClient Demo</h2>
+    
+    <!-- Form -->
+    <ion-item>
+      <ion-label position="floating">Booking ID</ion-label>
+      <ion-input [(ngModel)]="bookingId" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Service</ion-label>
+      <ion-input [(ngModel)]="service"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Date</ion-label>
+      <ion-input [(ngModel)]="date" type="date"></ion-input>
+    </ion-item>
+
+    <!-- Buttons -->
+    <ion-button expand="block" (click)="sendBooking()" color="primary">
+      Send Booking (POST)
+    </ion-button>
+    
+    <ion-button expand="block" (click)="loadBookings()" color="secondary">
+      Load Bookings (GET)
+    </ion-button>
+
+    <ion-button expand="block" (click)="updateBooking()" color="tertiary">
+      Update Booking (PUT)
+    </ion-button>
+
+    <ion-button expand="block" (click)="patchBooking()" color="warning">
+      Patch Booking (PATCH)
+    </ion-button>
+
+    <ion-button expand="block" (click)="deleteBooking()" color="danger">
+      Delete Booking (DELETE)
+    </ion-button>
+
+
+    <!-- Results -->
+    <div *ngIf="bookings.length > 0">
+      <h3>Results from API:</h3>
+      <ion-card *ngFor="let booking of bookings.slice(0,5)">
+        <ion-card-content>
+          <strong>ID: {{ booking.id }}</strong><br>
+          {{ booking.title }}
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+  </div>
+</ion-content>
