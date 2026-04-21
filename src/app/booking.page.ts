@@ -9,6 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.page.html',
+  styleUrls: ['./booking.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule],
 })
@@ -140,7 +141,7 @@ loadBookingWithParams() {
     });
   }
 
-  // DELETE booking
+  // DELETE booking(remove booking  with the specified ID)
   deleteBooking() {
 
     this.bookingService.deleteBooking(this.bookingId).subscribe({
