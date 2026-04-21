@@ -140,7 +140,7 @@ loadBookingWithParams() {
     });
   }
 
-  // DELETE booking
+  // DELETE booking(remove booking  with the specified ID)
   deleteBooking() {
 
     this.bookingService.deleteBooking(this.bookingId).subscribe({
