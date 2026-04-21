@@ -42,7 +42,7 @@ deleteBooking(id: number) {
 getBookingByIdWithHeader(headers: HttpHeaders) {
 return this.http.get('https://jsonplaceholder.typicode.com/posts', { headers });
 }
-// GET bookings with query parameters
+// consructing and passing query parameters
 getBookingsWithParams(params: any) {
   return this.http.get('https://jsonplaceholder.typicode.com/posts', { params });
 }}
